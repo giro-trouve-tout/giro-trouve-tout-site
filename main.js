@@ -2,12 +2,15 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import './style.css'
 
+import { forfaits, initForfaits } from './sections/forfaits.js'
+
 document.querySelector('#app').innerHTML = `
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
   <div class="container">
 
     <a class="navbar-brand d-flex align-items-center" href="#">
-      <img src="/logo.png" height="70">
+      <img src="/logo.png" height="70" alt="Logo Giro Trouve Tout">
+
       <div class="ms-3">
         <h4 class="m-0 text-white">GIRO-TROUVE-TOUT</h4>
         <small class="text-warning">DÉPANNAGE</small>
@@ -15,8 +18,10 @@ document.querySelector('#app').innerHTML = `
     </a>
 
     <div class="ms-auto">
-      <a class="btn btn-outline-warning btn-lg"
-         href="tel:0745100547">
+      <a
+        class="btn btn-warning btn-lg"
+        href="tel:0745100547"
+      >
         <i class="bi bi-telephone-fill"></i>
         07 45 10 05 47
       </a>
@@ -25,61 +30,68 @@ document.querySelector('#app').innerHTML = `
   </div>
 </nav>
 
+
 <section class="hero">
 
-<div class="container">
+  <div class="container">
 
-<div class="row align-items-center">
+    <div class="row align-items-center">
 
-<div class="col-lg-6 text-center">
+      <div class="col-lg-6 text-center">
 
-<img src="/logo.png"
-class="img-fluid logo-principal">
+        <img
+          src="/logo.png"
+          class="img-fluid logo-principal"
+          alt="Giro Trouve Tout Dépannage"
+        >
 
-</div>
+      </div>
 
-<div class="col-lg-6">
 
-<p class="text-warning fs-4">
-DÉPANNAGE À DOMICILE
-</p>
+      <div class="col-lg-6">
 
-<h1>
-Une solution<br>
-<span>à chaque panne</span>
-</h1>
+        <p class="text-warning fs-4">
+          DÉPANNAGE À DOMICILE
+        </p>
 
-<p class="description">
+        <h1>
+          Une solution<br>
+          <span>à chaque panne</span>
+        </h1>
 
-Électroménager • TV • Hi-Fi •
-Électronique • Serrurerie
+        <p class="description">
+          Électroménager • TV • Hi-Fi •
+          Électronique • Serrurerie • Volets roulants
+        </p>
 
-</p>
 
-<a href="tel:0745100547"
-class="btn btn-warning btn-lg me-3">
+        <a
+          href="tel:0745100547"
+          class="btn btn-warning btn-lg me-3 mb-2"
+        >
+          <i class="bi bi-telephone-fill"></i>
+          Appeler maintenant
+        </a>
 
-<i class="bi bi-telephone-fill"></i>
 
-Appeler maintenant
+        <a
+          href="#forfaits"
+          class="btn btn-warning btn-lg mb-2"
+        >
+          <i class="bi bi-file-earmark-text"></i>
+          Voir les forfaits
+        </a>
 
-</a>
+      </div>
 
-<a href="#"
+    </div>
 
-class="btn btn-outline-light btn-lg">
-
-<i class="bi bi-file-earmark-text"></i>
-
-Demander un devis
-
-</a>
-
-</div>
-
-</div>
-
-</div>
+  </div>
 
 </section>
+
+
+${forfaits()}
 `
+
+initForfaits()

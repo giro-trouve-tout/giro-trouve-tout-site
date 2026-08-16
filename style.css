@@ -1,131 +1,623 @@
-body{
-    background:#111;
-    color:white;
-    font-family:Arial, Helvetica, sans-serif;
+/* =========================================
+   GIRO TROUVE TOUT
+   STYLE PRINCIPAL
+========================================= */
+
+:root {
+  --giro-orange: #ffc107;
+  --giro-dark: #101820;
+  --giro-dark-2: #17212b;
+  --giro-card: #1c2732;
+  --giro-border: #34414d;
+  --giro-white: #ffffff;
+  --giro-grey: #b9c1c9;
 }
 
-.navbar{
-    border-bottom:2px solid #ff7b00;
+html {
+  scroll-behavior: smooth;
 }
 
-.hero{
+body {
+  margin: 0;
+  background: var(--giro-dark);
+  color: var(--giro-white);
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-    background:linear-gradient(
-    rgba(0,0,0,.70),
-    rgba(0,0,0,.70)),
-    url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80");
 
-    background-size:cover;
-    background-position:center;
+/* =========================================
+   NAVBAR
+========================================= */
 
-    min-height:90vh;
+.navbar {
+  min-height: 90px;
+}
 
-    display:flex;
+.navbar-brand img {
+  object-fit: contain;
+}
 
-    align-items:center;
+.navbar-brand h4 {
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.navbar .btn-warning,
+.navbar .btn-outline-warning:hover {
+  color: #111;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   HERO / ACCUEIL
+========================================= */
+
+.hero {
+  min-height: calc(100vh - 90px);
+  display: flex;
+  align-items: center;
+
+  background:
+    radial-gradient(
+      circle at 20% 40%,
+      rgba(255, 193, 7, 0.08),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #111b24 0%,
+      #17222c 55%,
+      #0d151c 100%
+    );
+
+  padding: 70px 0;
+}
+
+.logo-principal {
+  width: 100%;
+  max-width: 500px;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.hero h1 {
+  margin-bottom: 25px;
+  color: var(--giro-white);
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -2px;
+}
+
+.hero h1 span {
+  color: var(--giro-orange);
+}
+
+.hero .description {
+  max-width: 650px;
+  margin-bottom: 32px;
+  color: #d4dae0;
+  font-size: 1.3rem;
+  line-height: 1.7;
+}
+
+.hero .btn {
+  min-height: 52px;
+  padding: 12px 22px;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   LIENS
+========================================= */
+
+a {
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+a:not(.btn):not(.navbar-brand) {
+  color: var(--giro-orange);
+  font-weight: 700;
+}
+
+a:not(.btn):not(.navbar-brand):hover {
+  color: #ffda55;
+}
+
+
+/* =========================================
+   BOUTONS
+========================================= */
+
+.btn-warning {
+  color: #111;
+  background-color: var(--giro-orange);
+  border-color: var(--giro-orange);
+  font-weight: 700;
+}
+
+.btn-warning:hover {
+  color: #111;
+  background-color: #ffcf33;
+  border-color: #ffcf33;
+  transform: translateY(-2px);
+}
+
+.btn-outline-warning {
+  color: var(--giro-orange);
+  border-color: var(--giro-orange);
+}
+
+.btn-outline-warning:hover {
+  color: #111;
+  background-color: var(--giro-orange);
+  border-color: var(--giro-orange);
+}
+
+.btn-outline-light:hover {
+  color: #111;
+  background-color: var(--giro-orange);
+  border-color: var(--giro-orange);
+}
+
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.section,
+.forfaits-section,
+.services-section,
+.contact-section {
+  padding: 90px 0;
+}
+
+.section-title {
+  max-width: 800px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.section-kicker {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--giro-orange);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section-title h2 {
+  margin-bottom: 15px;
+  color: var(--giro-white);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+}
+
+.section-title p {
+  margin: 0;
+  color: var(--giro-grey);
+  font-size: 1.08rem;
+}
+
+
+/* =========================================
+   FORFAITS
+========================================= */
+
+.forfaits-section {
+  position: relative;
+
+  background:
+    linear-gradient(
+      180deg,
+      #101820 0%,
+      #141f29 50%,
+      #101820 100%
+    );
+
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.forfaits-categories {
+  max-width: 1050px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+
+/* =========================================
+   CATÉGORIES SERRURERIE / VOLETS
+========================================= */
+
+.forfait-category {
+  overflow: hidden;
+  background: var(--giro-dark-2);
+  border: 1px solid var(--giro-border);
+  border-radius: 18px;
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.22);
+}
+
+.forfait-category-button {
+  width: 100%;
+  min-height: 95px;
+  padding: 22px 26px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  color: var(--giro-white);
+  background: var(--giro-card);
+
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+
+  transition: background 0.2s ease;
+}
+
+.forfait-category-button:hover {
+  background: #263440;
+}
+
+.forfait-category-button > span:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.forfait-category-button strong {
+  color: var(--giro-orange);
+  font-size: 1.45rem;
+  font-weight: 800;
+}
+
+.forfait-category-button small {
+  color: var(--giro-grey);
+  font-size: 0.95rem;
+}
+
+.forfait-arrow {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #111;
+  background: var(--giro-orange);
+
+  border-radius: 50%;
+
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+
+/* =========================================
+   CONTENU DES FORFAITS
+========================================= */
+
+.forfait-category-content {
+  padding: 5px 26px 30px;
+  background: #131d26;
+}
+
+.forfait-category-content[hidden] {
+  display: none;
+}
+
+.forfait-subcategory {
+  padding-top: 30px;
+}
+
+.forfait-subcategory + .forfait-subcategory {
+  margin-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.forfait-subcategory h3 {
+  position: relative;
+
+  margin: 0 0 20px;
+  padding-left: 15px;
+
+  color: var(--giro-white);
+
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.forfait-subcategory h3::before {
+  content: "";
+  position: absolute;
+
+  top: 3px;
+  bottom: 3px;
+  left: 0;
+
+  width: 4px;
+
+  background: var(--giro-orange);
+  border-radius: 10px;
+}
+
+
+/* =========================================
+   CARTES TARIFS
+========================================= */
+
+.forfait-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.forfait-card {
+  min-height: 125px;
+  padding: 19px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  background: var(--giro-card);
+
+  border: 1px solid var(--giro-border);
+  border-radius: 13px;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.forfait-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 193, 7, 0.55);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.forfait-info {
+  flex: 1;
+}
+
+.forfait-info h4 {
+  margin: 0 0 7px;
+
+  color: var(--giro-white);
+
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.forfait-info p {
+  margin: 0;
+
+  color: var(--giro-grey);
+
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.forfait-price {
+  min-width: 115px;
+
+  color: var(--giro-orange);
+
+  font-size: 1.12rem;
+  font-weight: 900;
+  text-align: right;
+}
+
+
+/* =========================================
+   NOTE SOUS LES TARIFS
+========================================= */
+
+.forfaits-note {
+  max-width: 1050px;
+
+  margin: 25px auto 0;
+  padding: 22px 24px;
+
+  color: #e7ebef;
+
+  background: rgba(255, 193, 7, 0.08);
+
+  border: 1px solid rgba(255, 193, 7, 0.25);
+  border-left: 5px solid var(--giro-orange);
+  border-radius: 12px;
+}
+
+.forfaits-note p {
+  margin: 0;
+}
+
+.forfaits-note p + p {
+  margin-top: 9px;
+}
+
+.forfaits-note strong {
+  color: var(--giro-orange);
+}
+
+
+/* =========================================
+   TABLETTE
+========================================= */
+
+@media (max-width: 991px) {
+
+  .hero {
+    text-align: center;
+  }
+
+  .logo-principal {
+    max-width: 380px;
+    margin-bottom: 40px;
+  }
+
+  .hero .description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .forfait-list {
+    grid-template-columns: 1fr;
+  }
 
 }
 
-.logo-principal{
 
-    max-width:500px;
+/* =========================================
+   MOBILE
+========================================= */
 
-    filter:drop-shadow(0 0 30px rgba(255,120,0,.35));
+@media (max-width: 767px) {
+
+  .navbar {
+    min-height: auto;
+  }
+
+  .navbar .container {
+    flex-direction: column;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .navbar-brand {
+    margin-right: 0;
+  }
+
+  .navbar-brand img {
+    height: 55px;
+  }
+
+  .navbar-brand h4 {
+    font-size: 1rem;
+  }
+
+  .navbar .ms-auto {
+    width: 100%;
+    margin-top: 12px;
+    margin-left: 0 !important;
+  }
+
+  .navbar .btn {
+    width: 100%;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 50px 0 65px;
+  }
+
+  .logo-principal {
+    max-width: 300px;
+    margin-bottom: 30px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero .description {
+    font-size: 1.05rem;
+  }
+
+  .hero .btn {
+    width: 100%;
+    margin-right: 0 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .section,
+  .forfaits-section,
+  .services-section,
+  .contact-section {
+    padding: 65px 0;
+  }
+
+  .forfait-category-button {
+    min-height: 85px;
+    padding: 18px;
+  }
+
+  .forfait-category-button strong {
+    font-size: 1.15rem;
+  }
+
+  .forfait-category-button small {
+    font-size: 0.82rem;
+  }
+
+  .forfait-arrow {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+    font-size: 1.4rem;
+  }
+
+  .forfait-category-content {
+    padding: 5px 14px 20px;
+  }
+
+  .forfait-card {
+    min-height: 0;
+    padding: 17px;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+  .forfait-price {
+    min-width: 0;
+    text-align: left;
+    font-size: 1.15rem;
+  }
 
 }
 
-.hero h1{
 
-    font-size:72px;
+/* =========================================
+   TRÈS PETITS ÉCRANS
+========================================= */
 
-    font-weight:bold;
+@media (max-width: 420px) {
 
-    line-height:1;
+  .hero h1 {
+    font-size: 2.55rem;
+  }
 
-}
+  .navbar-brand img {
+    height: 48px;
+  }
 
-.hero h1 span{
-
-    color:#ff7b00;
-
-}
-
-.description{
-
-    font-size:24px;
-
-    margin:35px 0;
-
-    color:#ddd;
-
-}
-
-.btn{
-
-    border-radius:12px;
-
-    padding:16px 28px;
-
-    font-size:20px;
-
-    font-weight:bold;
-
-}
-
-.btn-warning{
-
-    background:#ff7b00;
-
-    border:none;
-
-}
-
-.btn-warning:hover{
-
-    background:#ff9500;
-
-}
-
-.btn-outline-light:hover{
-
-    color:black;
-
-}
-
-.navbar-brand h4{
-
-    font-weight:bold;
-
-}
-
-@media(max-width:991px){
-
-.hero{
-
-text-align:center;
-
-padding:50px 0;
-
-}
-
-.hero h1{
-
-font-size:48px;
-
-}
-
-.logo-principal{
-
-max-width:320px;
-
-margin-bottom:40px;
-
-}
-
-.description{
-
-font-size:20px;
-
-}
+  .forfait-category-button {
+    padding: 16px 14px;
+  }
 
 }
