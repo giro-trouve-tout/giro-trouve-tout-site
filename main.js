@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import './style.css'
 
@@ -50,8 +51,8 @@ document.querySelector('#app').innerHTML = `
 
       <div class="col-lg-6">
 
-        <p class="text-warning fs-4">
-          DÉPANNAGE À DOMICILE
+        <p class="text-warning fs-4 fw-bold">
+          DÉPANNAGE À LUZINAY OU À DOMICILE
         </p>
 
         <h1>
@@ -65,22 +66,45 @@ document.querySelector('#app').innerHTML = `
         </p>
 
 
-        <a
-          href="tel:0745100547"
-          class="btn btn-warning btn-lg me-3 mb-2"
-        >
-          <i class="bi bi-telephone-fill"></i>
-          Appeler maintenant
-        </a>
+        <div class="hero-buttons">
+
+          <a
+            href="tel:0745100547"
+            class="btn btn-warning btn-lg me-3 mb-2"
+          >
+            <i class="bi bi-telephone-fill"></i>
+            Appeler maintenant
+          </a>
 
 
-        <a
-          href="#forfaits"
-          class="btn btn-warning btn-lg mb-2"
-        >
-          <i class="bi bi-file-earmark-text"></i>
-          Voir les forfaits
-        </a>
+          <a
+            href="#forfaits"
+            class="btn btn-warning btn-lg mb-2"
+          >
+            <i class="bi bi-file-earmark-text"></i>
+            Voir les tarifs
+          </a>
+
+        </div>
+
+
+        <div class="atelier-info mt-4">
+
+          <div class="atelier-icon">
+            <i class="bi bi-geo-alt-fill"></i>
+          </div>
+
+          <div>
+            <p class="mb-1 fw-bold">
+              Atelier sur la commune de Luzinay (38200), sur rendez-vous.
+            </p>
+
+            <p class="mb-0">
+              Veuillez prendre contact pour plus d'informations.
+            </p>
+          </div>
+
+        </div>
 
       </div>
 

@@ -110,6 +110,54 @@ body {
 
 
 /* =========================================
+   INFORMATIONS ATELIER
+========================================= */
+
+.atelier-info {
+  max-width: 650px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+
+  color: #e7ebef;
+  background: rgba(255, 193, 7, 0.07);
+
+  border: 1px solid rgba(255, 193, 7, 0.28);
+  border-left: 5px solid var(--giro-orange);
+  border-radius: 12px;
+}
+
+.atelier-icon {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #111;
+  background: var(--giro-orange);
+  border-radius: 50%;
+
+  font-size: 1.2rem;
+}
+
+.atelier-info p {
+  line-height: 1.5;
+}
+
+.atelier-info p:first-child {
+  color: var(--giro-white);
+}
+
+.atelier-info p:last-child {
+  color: var(--giro-grey);
+}
+
+
+/* =========================================
    LIENS
 ========================================= */
 
@@ -229,6 +277,7 @@ a:not(.btn):not(.navbar-brand):hover {
 .forfaits-categories {
   max-width: 1050px;
   margin: 0 auto;
+
   display: flex;
   flex-direction: column;
   gap: 22px;
@@ -241,6 +290,7 @@ a:not(.btn):not(.navbar-brand):hover {
 
 .forfait-category {
   overflow: hidden;
+
   background: var(--giro-dark-2);
   border: 1px solid var(--giro-border);
   border-radius: 18px;
@@ -301,7 +351,6 @@ a:not(.btn):not(.navbar-brand):hover {
 
   color: #111;
   background: var(--giro-orange);
-
   border-radius: 50%;
 
   font-size: 1.7rem;
@@ -339,15 +388,14 @@ a:not(.btn):not(.navbar-brand):hover {
   padding-left: 15px;
 
   color: var(--giro-white);
-
   font-size: 1.25rem;
   font-weight: 800;
 }
 
 .forfait-subcategory h3::before {
   content: "";
-  position: absolute;
 
+  position: absolute;
   top: 3px;
   bottom: 3px;
   left: 0;
@@ -379,7 +427,6 @@ a:not(.btn):not(.navbar-brand):hover {
   gap: 20px;
 
   background: var(--giro-card);
-
   border: 1px solid var(--giro-border);
   border-radius: 13px;
 
@@ -405,7 +452,6 @@ a:not(.btn):not(.navbar-brand):hover {
   margin: 0 0 7px;
 
   color: var(--giro-white);
-
   font-size: 1rem;
   font-weight: 800;
   line-height: 1.35;
@@ -415,7 +461,6 @@ a:not(.btn):not(.navbar-brand):hover {
   margin: 0;
 
   color: var(--giro-grey);
-
   font-size: 0.86rem;
   line-height: 1.5;
 }
@@ -424,7 +469,6 @@ a:not(.btn):not(.navbar-brand):hover {
   min-width: 115px;
 
   color: var(--giro-orange);
-
   font-size: 1.12rem;
   font-weight: 900;
   text-align: right;
@@ -437,12 +481,10 @@ a:not(.btn):not(.navbar-brand):hover {
 
 .forfaits-note {
   max-width: 1050px;
-
   margin: 25px auto 0;
   padding: 22px 24px;
 
   color: #e7ebef;
-
   background: rgba(255, 193, 7, 0.08);
 
   border: 1px solid rgba(255, 193, 7, 0.25);
@@ -483,10 +525,15 @@ a:not(.btn):not(.navbar-brand):hover {
     margin-right: auto;
   }
 
+  .atelier-info {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+
   .forfait-list {
     grid-template-columns: 1fr;
   }
-
 }
 
 
@@ -552,6 +599,16 @@ a:not(.btn):not(.navbar-brand):hover {
     margin-bottom: 12px !important;
   }
 
+  .atelier-info {
+    padding: 16px;
+  }
+
+  .atelier-icon {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+  }
+
   .section,
   .forfaits-section,
   .services-section,
@@ -589,7 +646,6 @@ a:not(.btn):not(.navbar-brand):hover {
 
     flex-direction: column;
     align-items: flex-start;
-
     gap: 12px;
   }
 
@@ -598,7 +654,6 @@ a:not(.btn):not(.navbar-brand):hover {
     text-align: left;
     font-size: 1.15rem;
   }
-
 }
 
 
@@ -620,4 +675,8 @@ a:not(.btn):not(.navbar-brand):hover {
     padding: 16px 14px;
   }
 
+  .atelier-info {
+    gap: 12px;
+    padding: 14px;
+  }
 }
