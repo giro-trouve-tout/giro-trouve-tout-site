@@ -506,6 +506,209 @@ a:not(.btn):not(.navbar-brand):hover {
 
 
 /* =========================================
+   MENTIONS LÉGALES
+========================================= */
+
+.mentions-legales {
+  padding: 80px 0;
+  scroll-margin-top: 20px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #0d151c 0%,
+      #131e27 100%
+    );
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mentions-legales[hidden] {
+  display: none;
+}
+
+.mentions-card {
+  max-width: 950px;
+  margin: 0 auto;
+  overflow: hidden;
+
+  background: var(--giro-dark-2);
+  border: 1px solid var(--giro-border);
+  border-radius: 18px;
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.25);
+}
+
+.mentions-header {
+  padding: 28px 30px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+
+  background: var(--giro-card);
+  border-bottom: 1px solid var(--giro-border);
+}
+
+.mentions-header h2 {
+  margin: 0;
+  color: var(--giro-white);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+}
+
+.mentions-close {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #111;
+  background: var(--giro-orange);
+
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+
+  font-size: 1.2rem;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.mentions-close:hover {
+  background: #ffcf33;
+  transform: scale(1.05);
+}
+
+.mentions-content {
+  padding: 30px;
+}
+
+.mentions-content h3 {
+  margin: 32px 0 12px;
+  padding-left: 13px;
+
+  color: var(--giro-orange);
+  border-left: 4px solid var(--giro-orange);
+
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.mentions-content h3:first-child {
+  margin-top: 0;
+}
+
+.mentions-content p {
+  margin-bottom: 15px;
+
+  color: #d4dae0;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.mentions-content strong {
+  color: var(--giro-white);
+}
+
+.mentions-back {
+  margin-top: 35px;
+  text-align: center;
+}
+
+
+/* =========================================
+   PIED DE PAGE
+========================================= */
+
+.site-footer {
+  padding: 38px 0 22px;
+
+  background: #0b1218;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-content {
+  padding-bottom: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-company {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.footer-company strong {
+  color: var(--giro-white);
+  font-size: 1rem;
+}
+
+.footer-company span {
+  color: var(--giro-grey);
+  font-size: 0.9rem;
+}
+
+.footer-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.footer-contact a {
+  text-decoration: none;
+}
+
+.footer-contact i {
+  margin-right: 5px;
+}
+
+.footer-bottom {
+  padding-top: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  color: #89949e;
+  font-size: 0.88rem;
+}
+
+.footer-legal-link {
+  padding: 0;
+
+  color: var(--giro-orange);
+  background: transparent;
+
+  border: 0;
+  cursor: pointer;
+
+  font: inherit;
+  font-weight: 700;
+}
+
+.footer-legal-link:hover {
+  color: #ffda55;
+  text-decoration: underline;
+}
+
+
+/* =========================================
    TABLETTE
 ========================================= */
 
@@ -653,6 +856,34 @@ a:not(.btn):not(.navbar-brand):hover {
     min-width: 0;
     text-align: left;
     font-size: 1.15rem;
+  }
+
+  .mentions-legales {
+    padding: 50px 0;
+  }
+
+  .mentions-header {
+    padding: 22px 18px;
+  }
+
+  .mentions-content {
+    padding: 22px 18px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-contact {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
